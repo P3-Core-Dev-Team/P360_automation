@@ -1,5 +1,5 @@
 import { LoginLocators } from '../LIB/Login';
-import { browser, logging, ElementFinder } from 'protractor';
+import { browser, logging, ElementFinder, Browser } from 'protractor';
 import { protractor } from 'protractor/built/ptor';
 import { rexcel } from '../POM/excel';
 import { createconnect} from '../LIB/connectioncreation';
@@ -43,10 +43,15 @@ describe('TS_001 - application  creation ', () => {
         Connection.developerscreen.click();
         browser.sleep(5000);
 await Appcreate.application.click();
+browser.sleep(5000);
 Appcreate.addconnection.click();
 Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 1));
 Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 2));
 Appcreate.Tag.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 3));
+browser.actions().sendKeys(protractor.Key.ENTER).perform().then(function () {
+    browser.sleep(5000);
+})
+
 Appcreate.next.click();
 browser.sleep(5000);
 Appcreate.connectiontype.click();
@@ -63,6 +68,40 @@ Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 
 Appcreate.selectapp.click();
 browser.sleep(3000);
 Appcreate.create.click();
+browser.sleep(3000);
+
+    })
+
+    it('TC_004: application creation for RDBMS',async () =>{
+        Connection.developerscreen.click();
+        browser.sleep(5000);
+await Appcreate.application.click();
+browser.sleep(5000);
+Appcreate.addconnection.click();
+Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 1));
+Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 2));
+Appcreate.Tag.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 3));
+Appcreate.next.click();
+browser.sleep(5000);
+Appcreate.connectiontype.click();
+ await Appcreate.Connectionoption2.click();
+ browser.sleep(5000);
+await Appcreate.connectionprofile.click();
+browser.sleep(5000);
+
+Appcreate.profileoption2.click();
+browser.sleep(5000);
+Appcreate.schemas.click();
+browser.sleep(5000);
+Appcreate.selectschema.click();
+browser.sleep(3000);
+// Appcreate.applicationlist.click();
+
+// Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
+// Appcreate.selectapp.click();
+// browser.sleep(3000);
+await browser.actions().doubleClick(Appcreate.create).perform();
+// Appcreate.create.click();
 browser.sleep(3000);
 
     })

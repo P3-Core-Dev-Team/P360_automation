@@ -12,9 +12,14 @@ exports.config = {
             //'args': [ "--headless","--disable-gpu", "--window-size=800,600" ]
         },
     },
-    //  specs:['./spec/POM/signin.js'],
+    // specs:['./spec/POM/signin.js'],
     //  specs:['./spec/POM/connection.js'],
     specs: ['./spec/POM/applicationcreation.js'],
+    // specs:['./spec/POM/ConnectionRDBMS.js'],
+    //  suites:
+    //   {
+    //     specs: ['./spec/POM/signin.js','./spec/POM/connection.js','./spec/POM/applicationcreation.js'],
+    //   },
     onPrepare: function () {
         var ChercherTechJasmineReporter = reporter.ChercherTechJasmineReporter;
         jasmine.getEnv().addReporter(new ChercherTechJasmineReporter({

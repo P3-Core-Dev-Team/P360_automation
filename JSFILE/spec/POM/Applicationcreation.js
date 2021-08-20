@@ -38,6 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Login_1 = require("../LIB/Login");
 var protractor_1 = require("protractor");
+var ptor_1 = require("protractor/built/ptor");
 var excel_1 = require("../POM/excel");
 var connectioncreation_1 = require("../LIB/connectioncreation");
 var applicationcreationIA_1 = require("../LIB/applicationcreationIA");
@@ -83,10 +84,14 @@ describe('TS_001 - application  creation ', function () {
                     return [4 /*yield*/, Appcreate.application.click()];
                 case 1:
                     _a.sent();
+                    protractor_1.browser.sleep(5000);
                     Appcreate.addconnection.click();
                     Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 1));
                     Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 2));
                     Appcreate.Tag.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 3));
+                    protractor_1.browser.actions().sendKeys(ptor_1.protractor.Key.ENTER).perform().then(function () {
+                        protractor_1.browser.sleep(5000);
+                    });
                     Appcreate.next.click();
                     protractor_1.browser.sleep(5000);
                     Appcreate.connectiontype.click();
@@ -108,6 +113,54 @@ describe('TS_001 - application  creation ', function () {
                     Appcreate.selectapp.click();
                     protractor_1.browser.sleep(3000);
                     Appcreate.create.click();
+                    protractor_1.browser.sleep(3000);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    it('TC_004: application creation for RDBMS', function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    Connection.developerscreen.click();
+                    protractor_1.browser.sleep(5000);
+                    return [4 /*yield*/, Appcreate.application.click()];
+                case 1:
+                    _a.sent();
+                    protractor_1.browser.sleep(5000);
+                    Appcreate.addconnection.click();
+                    Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 1));
+                    Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 2));
+                    Appcreate.Tag.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 3));
+                    Appcreate.next.click();
+                    protractor_1.browser.sleep(5000);
+                    Appcreate.connectiontype.click();
+                    return [4 /*yield*/, Appcreate.Connectionoption2.click()];
+                case 2:
+                    _a.sent();
+                    protractor_1.browser.sleep(5000);
+                    return [4 /*yield*/, Appcreate.connectionprofile.click()];
+                case 3:
+                    _a.sent();
+                    protractor_1.browser.sleep(5000);
+                    Appcreate.profileoption2.click();
+                    protractor_1.browser.sleep(5000);
+                    Appcreate.schemas.click();
+                    protractor_1.browser.sleep(5000);
+                    Appcreate.selectschema.click();
+                    protractor_1.browser.sleep(3000);
+                    // Appcreate.applicationlist.click();
+                    // Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
+                    // Appcreate.selectapp.click();
+                    // browser.sleep(3000);
+                    return [4 /*yield*/, protractor_1.browser.actions().doubleClick(Appcreate.create).perform()];
+                case 4:
+                    // Appcreate.applicationlist.click();
+                    // Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
+                    // Appcreate.selectapp.click();
+                    // browser.sleep(3000);
+                    _a.sent();
+                    // Appcreate.create.click();
                     protractor_1.browser.sleep(3000);
                     return [2 /*return*/];
             }

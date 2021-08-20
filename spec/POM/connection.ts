@@ -18,25 +18,25 @@ describe('TS_001 - connection creation ', () => {
       jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   });
 
-  it('TC_001: Open P360v2 URL LAUNCH', async () => {
-    Signin.getUrl();
-    browser.driver.manage().window().maximize();
-    browser.sleep(6000);
-    browser.getCurrentUrl().then(function (url) {
-        console.log("Web page url is : " + url)
-    })
-    browser.getTitle().then(function (title) {
-        console.log("Web page title is : " + title)
-    })
-})
+//    it('TC_001: Open P360v2 URL LAUNCH', async () => {
+//     Signin.getUrl();
+//     browser.driver.manage().window().maximize();
+//     browser.sleep(6000);
+//     browser.getCurrentUrl().then(function (url) {
+//         console.log("Web page url is : " + url)
+//     })
+//     browser.getTitle().then(function (title) {
+//         console.log("Web page title is : " + title)
+//     })
+// })
     
-  it('TC_002:enter username and password click signin button ',async () =>{
-    Signin.getUsername().sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 3, 1));
-    Signin.getPassword().sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 3, 2));
-    Signin.getLog().click();
-    browser.sleep(5000);
+//   it('TC_002:enter username and password click signin button ',async () =>{
+//     Signin.getUsername().sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 3, 1));
+//     Signin.getPassword().sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 3, 2));
+//     Signin.getLog().click();
+//     browser.sleep(5000);
            
-    })
+//     })
 
     it('TC_003: connection creation for IA',async () =>{
         Connection.developerscreen.click();
