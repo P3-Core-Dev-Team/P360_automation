@@ -132,6 +132,9 @@ describe('TS_001 - application  creation ', function () {
                     Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 1));
                     Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 2));
                     Appcreate.Tag.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 3));
+                    protractor_1.browser.actions().sendKeys(ptor_1.protractor.Key.ENTER).perform().then(function () {
+                        protractor_1.browser.sleep(5000);
+                    });
                     Appcreate.next.click();
                     protractor_1.browser.sleep(5000);
                     Appcreate.connectiontype.click();
@@ -149,19 +152,80 @@ describe('TS_001 - application  creation ', function () {
                     protractor_1.browser.sleep(5000);
                     Appcreate.selectschema.click();
                     protractor_1.browser.sleep(3000);
-                    // Appcreate.applicationlist.click();
-                    // Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
-                    // Appcreate.selectapp.click();
-                    // browser.sleep(3000);
+                    Appcreate.applicationlist.click();
+                    Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
+                    Appcreate.selectapp.click();
+                    protractor_1.browser.sleep(3000);
                     return [4 /*yield*/, protractor_1.browser.actions().doubleClick(Appcreate.create).perform()];
                 case 4:
-                    // Appcreate.applicationlist.click();
-                    // Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
-                    // Appcreate.selectapp.click();
-                    // browser.sleep(3000);
                     _a.sent();
                     // Appcreate.create.click();
                     protractor_1.browser.sleep(3000);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    // Edit the IA app created with app name and description 
+    it('TC_005: edit the application creation for IA app', function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    Connection.developerscreen.click();
+                    protractor_1.browser.sleep(5000);
+                    return [4 /*yield*/, Appcreate.application.click()];
+                case 1:
+                    _a.sent();
+                    protractor_1.browser.sleep(5000);
+                    Appcreate.Searchapp.click();
+                    Appcreate.Searchapp.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 1));
+                    protractor_1.browser.sleep(8000);
+                    Appcreate.clickaction.click();
+                    protractor_1.browser.sleep(8000);
+                    //  Appcreate.viewdetails.click()
+                    //  browser.sleep(5000);
+                    Appcreate.Edit.click();
+                    protractor_1.browser.sleep(5000);
+                    // edit app name description and update the IA app
+                    Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 14, 1));
+                    Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 14, 2));
+                    protractor_1.browser.sleep(5000);
+                    Appcreate.update.click();
+                    protractor_1.browser.sleep(5000);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    // edit RDBMS edit app editing the tag /adding the tag 
+    it('TC_005: edit the application creation for RDBMS app', function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    Connection.developerscreen.click();
+                    protractor_1.browser.sleep(5000);
+                    return [4 /*yield*/, Appcreate.application.click()];
+                case 1:
+                    _a.sent();
+                    protractor_1.browser.sleep(5000);
+                    Appcreate.Searchapp.click();
+                    Appcreate.Searchapp.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 1));
+                    protractor_1.browser.sleep(8000);
+                    Appcreate.clickaction.click();
+                    protractor_1.browser.sleep(8000);
+                    //  Appcreate.viewdetails.click()
+                    //  browser.sleep(5000);
+                    Appcreate.Edit.click();
+                    protractor_1.browser.sleep(5000);
+                    // edit app name description and update the IA app
+                    // Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 14, 1));
+                    // Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 14, 2));
+                    Appcreate.Tag.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 3));
+                    protractor_1.browser.actions().sendKeys(ptor_1.protractor.Key.ENTER).perform().then(function () {
+                        //     browser.sleep(5000);
+                        // })
+                        protractor_1.browser.sleep(5000);
+                        Appcreate.update.click();
+                        protractor_1.browser.sleep(5000);
+                    });
                     return [2 /*return*/];
             }
         });

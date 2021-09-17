@@ -27,7 +27,17 @@ var Applicationcreation = /** @class */ (function () {
         this.applicationoption = protractor_1.element(protractor_1.by.css("input[placeholder='Find IA Application']"));
         this.selectapp = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),' IA_APP')]"));
         //  this.selectappoption=element
-        this.create = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'Create')]")).get(1);
+        this.create = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'Create')]")).get(2);
+        //Edit the application 
+        //  this.Searchapp=element(by.xpath("//*[contains(text(),'search']"));
+        this.Searchapp = protractor_1.element(protractor_1.by.css("input[data-placeholder='Search']"));
+        this.clickaction = protractor_1.element.all(protractor_1.by.css("[ng-reflect-message='Action']")).get(0);
+        this.viewdetails = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'View Details')]"));
+        this.Edit = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'edit')]")).get(4);
+        this.configapp = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'Config Application')]"));
+        this.deleteapp = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'Delete Application')]"));
+        this.setasarch = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'Set as Active')]"));
+        this.update = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'Update ')]")).get(0);
     }
     return Applicationcreation;
 }());

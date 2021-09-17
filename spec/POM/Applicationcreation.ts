@@ -81,6 +81,9 @@ Appcreate.addconnection.click();
 Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 1));
 Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 2));
 Appcreate.Tag.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 3));
+browser.actions().sendKeys(protractor.Key.ENTER).perform().then(function () {
+        browser.sleep(5000);
+    })
 Appcreate.next.click();
 browser.sleep(5000);
 Appcreate.connectiontype.click();
@@ -95,14 +98,74 @@ Appcreate.schemas.click();
 browser.sleep(5000);
 Appcreate.selectschema.click();
 browser.sleep(3000);
-// Appcreate.applicationlist.click();
+Appcreate.applicationlist.click();
 
-// Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
-// Appcreate.selectapp.click();
-// browser.sleep(3000);
+Appcreate.applicationoption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
+Appcreate.selectapp.click();
+browser.sleep(3000);
 await browser.actions().doubleClick(Appcreate.create).perform();
 // Appcreate.create.click();
 browser.sleep(3000);
 
     })
+
+
+// Edit the IA app created with app name and description 
+    it('TC_005: edit the application creation for IA app',async () =>{
+
+        Connection.developerscreen.click();
+        browser.sleep(5000);
+await Appcreate.application.click();
+browser.sleep(5000);
+Appcreate.Searchapp.click();
+Appcreate.Searchapp.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 13, 1));
+browser.sleep(8000);
+ Appcreate.clickaction.click()
+ browser.sleep(8000);
+//  Appcreate.viewdetails.click()
+//  browser.sleep(5000);
+ Appcreate.Edit.click();
+ browser.sleep(5000);
+
+ // edit app name description and update the IA app
+ Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 14, 1));
+ Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 14, 2));
+ browser.sleep(5000);
+ Appcreate.update.click()
+
+ browser.sleep(5000);
+    })
+
+    // edit RDBMS edit app editing the tag /adding the tag 
+   it('TC_005: edit the application creation for RDBMS app',async () =>{
+
+
+    Connection.developerscreen.click();
+    browser.sleep(5000);
+await Appcreate.application.click();
+browser.sleep(5000);
+Appcreate.Searchapp.click();
+Appcreate.Searchapp.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 15, 1));
+browser.sleep(8000);
+Appcreate.clickaction.click()
+browser.sleep(8000);
+//  Appcreate.viewdetails.click()
+//  browser.sleep(5000);
+Appcreate.Edit.click();
+browser.sleep(5000);
+
+// edit app name description and update the IA app
+// Appcreate.appname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 14, 1));
+// Appcreate.Appdesc.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 14, 2));
+Appcreate.Tag.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 3));
+browser.actions().sendKeys(protractor.Key.ENTER).perform().then(function () {
+    //     browser.sleep(5000);
+    // })
+browser.sleep(5000);
+Appcreate.update.click()
+
+browser.sleep(5000);
+})
+
+})
 })

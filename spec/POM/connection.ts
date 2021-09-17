@@ -18,25 +18,25 @@ describe('TS_001 - connection creation ', () => {
       jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   });
 
-//    it('TC_001: Open P360v2 URL LAUNCH', async () => {
-//     Signin.getUrl();
-//     browser.driver.manage().window().maximize();
-//     browser.sleep(6000);
-//     browser.getCurrentUrl().then(function (url) {
-//         console.log("Web page url is : " + url)
-//     })
-//     browser.getTitle().then(function (title) {
-//         console.log("Web page title is : " + title)
-//     })
-// })
+   it('TC_001: Open P360v2 URL LAUNCH', async () => {
+    Signin.getUrl();
+    browser.driver.manage().window().maximize();
+    browser.sleep(6000);
+    browser.getCurrentUrl().then(function (url) {
+        console.log("Web page url is : " + url)
+    })
+    browser.getTitle().then(function (title) {
+        console.log("Web page title is : " + title)
+    })
+})
     
-//   it('TC_002:enter username and password click signin button ',async () =>{
-//     Signin.getUsername().sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 3, 1));
-//     Signin.getPassword().sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 3, 2));
-//     Signin.getLog().click();
-//     browser.sleep(5000);
+  it('TC_002:enter username and password click signin button ',async () =>{
+    Signin.getUsername().sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 3, 1));
+    Signin.getPassword().sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 3, 2));
+    Signin.getLog().click();
+    browser.sleep(5000);
            
-//     })
+    })
 
     it('TC_003: connection creation for IA',async () =>{
         Connection.developerscreen.click();
@@ -56,13 +56,13 @@ describe('TS_001 - connection creation ', () => {
          await Connection.next.click();
          browser.sleep(4000);
           await Connection.region.click();
-          browser.sleep(3000);
-          Connection.regtest.click();
+          browser.sleep(5000);
+         await Connection.regtest.click();
           browser.sleep(4000);
 Connection.protocol.click();
 browser.sleep(10000);
           await Connection.http.click();
-          browser.sleep(4000);
+          browser.sleep(10000);
           Connection.serverhost.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 9, 1));
           Connection.serverport.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 9, 2));
           Connection.restserverhost.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 9, 3));
@@ -73,7 +73,7 @@ browser.sleep(10000);
           Connection.clientscret.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 9, 8));
          await Connection.Testconnetion.click();
           await Connection.create.click();
-          browser.sleep(5000);
+          browser.sleep(10000);
           
 
 

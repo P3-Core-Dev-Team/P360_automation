@@ -15,6 +15,7 @@ export class createconnect{
       connectiondescritption :ElementFinder;
      next: ElementFinder;
      region : ElementFinder;
+     regionrdbms:ElementFinder;
     regdev: ElementFinder;
     regtest: ElementFinder;
     regstage: ElementFinder;
@@ -61,7 +62,8 @@ constructor() {
      this.connectiondescritption=element(by.css("input[formcontrolname='connectionDescription']"));
      this.next=element.all(by.xpath("//*[contains(text(),'Next')]")).get(0);
 
-     this.region=element.all(by.css("div[class*='mat-select-arrow']")).get(4);
+     this.region=element.all(by.css("div[class*='mat-select-arrow']")).get(2);
+     this.regionrdbms=element.all(by.css("div[class*='mat-select-arrow']")).get(4);
     this.regdev=element(by.xpath("//*[contains(text(),'DEV')]"));
     this.regtest=element(by.xpath("//*[contains(text(),'TEST')]"));
     this.regstage=element(by.xpath("//*[contains(text(),'STAGE ')]"));
@@ -69,7 +71,7 @@ constructor() {
     this.regother=element(by.xpath("//*[contains(text(),'other')]"));
 
      this.protocol=element.all(by.css("div[class*='mat-select-arrow']")).get(4);
-     this.http=element.all(by.xpath("//*[contains(text(),'http')]")).get(2);
+     this.http=element.all(by.xpath("//*[contains(text(),'http')]")).get(4);
      this.https=element(by.xpath("//*[contains(text(),'https')]"));
      this.serverhost=element(by.css("input[formcontrolname='serverGatewayIp']"));
 
@@ -85,7 +87,7 @@ constructor() {
 
     this.dbname=element(by.css("input[formcontrolname='databaseName']"));
     this.Testconnetion=element(by.xpath("//*[contains(text(),'Test Connection ')]"));
-    this.create=element.all(by.xpath("//*[contains(text(),'Create')]")).get(1);
+    this.create=element.all(by.xpath("//*[contains(text(),'Create')]")).get(2);
     this.update=element(by.xpath("//*[contains(text(),'Update')]"));
     this.popuptestcon=element(by.xpath("//*[contains(text(), 'Connection successful')]"));
     this.Searchconnection=element(by.css("input[type='search']"));

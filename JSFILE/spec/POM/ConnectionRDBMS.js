@@ -108,25 +108,25 @@ describe('TS_001 - connection creation ', function () {
                     //  browser.sleep(4000);
                     //MySQl Connection 
                     _a.sent();
-                    Connection.profilename.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 18, 1));
-                    Connection.connectiondescritption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 18, 2));
+                    Connection.profilename.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
+                    Connection.connectiondescritption.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 2));
                     protractor_1.browser.sleep(4000);
                     return [4 /*yield*/, Connection.next.click()];
                 case 5:
                     _a.sent();
                     protractor_1.browser.sleep(4000);
-                    return [4 /*yield*/, Connection.region.click()];
+                    return [4 /*yield*/, Connection.regionrdbms.click()];
                 case 6:
                     _a.sent();
-                    protractor_1.browser.sleep(3000);
+                    protractor_1.browser.sleep(5000);
                     Connection.regtest.click();
                     protractor_1.browser.sleep(4000);
                     //  Same key change the sheet columns for postgresql
-                    Connection.serverhost.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 1));
-                    Connection.serverport.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 2));
-                    Connection.username.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 3));
-                    Connection.password.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 4));
-                    Connection.dbname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 20, 5));
+                    Connection.serverhost.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 22, 1));
+                    Connection.serverport.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 22, 2));
+                    Connection.username.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 22, 3));
+                    Connection.password.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 22, 4));
+                    Connection.dbname.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 22, 5));
                     //   Connection.serverhost.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 26, 1));
                     //   Connection.serverport.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 26, 2));
                     //   Connection.username.sendKeys(x.readExcel("testdata.xlsx", "Sheet1", 26, 3));

@@ -13,9 +13,11 @@ exports.config = {
         },
     },
     // specs:['./spec/POM/signin.js'],
-    //  specs:['./spec/POM/connection.js'],
-    specs: ['./spec/POM/applicationcreation.js'],
-    // specs:['./spec/POM/ConnectionRDBMS.js'],
+    // specs:['./spec/POM/connection.js'],
+    // specs:['./spec/POM/applicationcreation.js'],
+    //  specs:['./spec/POM/ConnectionRDBMS.js'],
+    // specs:['./spec/POM/managecategory.js'],
+    specs: ['./spec/POM/audit.js'],
     //  suites:
     //   {
     //     specs: ['./spec/POM/signin.js','./spec/POM/connection.js','./spec/POM/applicationcreation.js'],

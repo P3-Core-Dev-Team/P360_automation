@@ -19,14 +19,15 @@ var createconnect = /** @class */ (function () {
         this.profilename = protractor_1.element(protractor_1.by.css("input[formcontrolname='profileName']"));
         this.connectiondescritption = protractor_1.element(protractor_1.by.css("input[formcontrolname='connectionDescription']"));
         this.next = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'Next')]")).get(0);
-        this.region = protractor_1.element.all(protractor_1.by.css("div[class*='mat-select-arrow']")).get(4);
+        this.region = protractor_1.element.all(protractor_1.by.css("div[class*='mat-select-arrow']")).get(2);
+        this.regionrdbms = protractor_1.element.all(protractor_1.by.css("div[class*='mat-select-arrow']")).get(4);
         this.regdev = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'DEV')]"));
         this.regtest = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'TEST')]"));
         this.regstage = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'STAGE ')]"));
         this.regprod = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'PROD')]"));
         this.regother = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'other')]"));
         this.protocol = protractor_1.element.all(protractor_1.by.css("div[class*='mat-select-arrow']")).get(4);
-        this.http = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'http')]")).get(2);
+        this.http = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'http')]")).get(4);
         this.https = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'https')]"));
         this.serverhost = protractor_1.element(protractor_1.by.css("input[formcontrolname='serverGatewayIp']"));
         this.serverport = protractor_1.element(protractor_1.by.css("input[formcontrolname='serverPort']"));
@@ -39,7 +40,7 @@ var createconnect = /** @class */ (function () {
         //Dbname 
         this.dbname = protractor_1.element(protractor_1.by.css("input[formcontrolname='databaseName']"));
         this.Testconnetion = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'Test Connection ')]"));
-        this.create = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'Create')]")).get(1);
+        this.create = protractor_1.element.all(protractor_1.by.xpath("//*[contains(text(),'Create')]")).get(2);
         this.update = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'Update')]"));
         this.popuptestcon = protractor_1.element(protractor_1.by.xpath("//*[contains(text(), 'Connection successful')]"));
         this.Searchconnection = protractor_1.element(protractor_1.by.css("input[type='search']"));

@@ -23,6 +23,16 @@ applicationoption: ElementFinder;
 selectapp: ElementFinder;
 create: ElementFinder;
 
+//Edit 
+Searchapp:ElementFinder;
+ clickaction:ElementFinder;
+ viewdetails:ElementFinder;
+ Edit:ElementFinder;
+ configapp:ElementFinder;
+ deleteapp:ElementFinder;
+ setasarch:ElementFinder;
+ update:ElementFinder;
+
 
 
 
@@ -56,9 +66,21 @@ create: ElementFinder;
      this.applicationoption=element(by.css("input[placeholder='Find IA Application']"))
      this.selectapp=element(by.xpath("//*[contains(text(),' IA_APP')]"));
     //  this.selectappoption=element
-     this.create=element.all(by.xpath("//*[contains(text(),'Create')]")).get(1);
+     this.create=element.all(by.xpath("//*[contains(text(),'Create')]")).get(2);
 
 
+
+
+     //Edit the application 
+    //  this.Searchapp=element(by.xpath("//*[contains(text(),'search']"));
+    this.Searchapp=element(by.css("input[data-placeholder='Search']"));
+      this.clickaction=element.all(by.css("[ng-reflect-message='Action']")).get(0);
+      this.viewdetails=element(by.xpath("//*[contains(text(),'View Details')]"));
+      this.Edit=element.all(by.xpath("//*[contains(text(),'edit')]")).get(4);
+      this.configapp=element(by.xpath("//*[contains(text(),'Config Application')]"));
+      this.deleteapp=element(by.xpath("//*[contains(text(),'Delete Application')]"));
+      this.setasarch=element(by.xpath("//*[contains(text(),'Set as Active')]"));
+      this.update=element.all(by.xpath("//*[contains(text(),'Update ')]")).get(0);
             }
         }
 
